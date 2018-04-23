@@ -1,0 +1,23 @@
+<div class="row">
+  <h4 class="card-header">Edit A Game</h4>
+  <div class="card-block">
+    <form [formGroup]="form" (submit)="editGame()" role="form">
+      <div class="col-lg-12">
+        <div class="form-group" *ngIf="game.game">
+          <label class="control-label">Name of Game</label>
+          <input type="text" name="title" id="title" class="form-control" placeholder="Typing name of game ..." [(ngModel)]="game.game.title" formControlName="title" required >
+        </div>
+
+        <div class="form-group" *ngIf="game.game">
+          <label class="control-label">Number of Prizes</label>
+          <input type="number" name="prizeamount" id="prizeamount" class="form-control" placeholder="Typing number of prizes ..." [(ngModel)]="game.game.prizeamount" formControlName="prizeamount" min="0" max="3" step="1" required >
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary" > <i class="fa fa-floppy-o"></i> Edit</button>
+            <button class="btn btn-warning">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

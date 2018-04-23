@@ -1,0 +1,104 @@
+<!-- Basic Lotto Component -->
+<section class="lotto-ticket__container">
+  <div class="container">
+    <!-- Vòng 1 -->
+    <div class="row">
+      <div class="col-md-6">
+        <div class="quick-pick__container">
+          <h3>First Prize</h3>
+          <table class="table" *ngIf="picks">
+            <tbody> 
+              <tr *ngFor="let pick of picks">
+                <td *ngFor="let item of pick">
+                  {{item}}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="actions" >
+          <button type="button" class="btn btn-primary" (click)="createQuickPick()" *ngIf="!isPlaying">Add Quick Pick</button>
+          <button type="button" class="btn btn-success" (click)="playLotto(picks)" *ngIf="!isPlaying">Play</button>
+          <button type="button" class="btn btn-danger" (click)="reset(picks)" *ngIf="isPlaying">Play Again</button>
+          <button type="button" class="btn btn-success" (click)="onSave1()" *ngIf="isPlaying">Save First Prize</button>
+          <button type="button" class="btn btn-success" (click)="onSave2()" *ngIf="isPlaying">Save Second Prize</button>
+          <button type="button" class="btn btn-success" (click)="onSave3()" *ngIf="isPlaying">Save Third Prize</button>
+        </div>
+      </div>
+      <div class="col-md-6" *ngIf="isPlaying">
+          <div class="winning-ticket__container">
+              <h3>Winning Number</h3>
+              <table class="table" *ngIf="picks">
+                <tbody> 
+                  <tr>
+                    <td *ngFor="let number of winningNumber">
+                      {{number}}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="alert alert-success" role="alert" *ngIf="isWinner">
+                <div *ngIf="winner">
+                  <p>You won! {{winner[1]}}</p>
+                </div>
+              </div>
+
+              <div class="alert alert-danger" role="alert" *ngIf="!isWinner">
+                <p>Sorry! Better luck next time!</p>
+              </div>
+
+          </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Detail GameShow</h3>
+          <table class="table" *ngIf="gameshows">
+          <thead class="thead-default">
+            <tr >
+              <th>Title Prize</th>
+              <th>Number of Prizes</th>
+              <th>Image of Prize</th>
+            </tr>
+          </thead>
+            <tbody> 
+              <tr *ngFor="let gameshow of gameshows">
+                <td>
+                  {{gameshow.title_first}}
+                </td>
+                <td>
+                  {{gameshow.prize_first}}
+                </td>
+                <td>
+                  <img src="./../../../assets/imgs/event/{{gameshow.image_first}}" alt="java" style="height=100px; width:200px">
+                </td>
+              </tr>
+              <tr *ngFor="let gameshow of gameshows">
+                <td>
+                  {{gameshow.title_second}}
+                </td>
+                <td>
+                  {{gameshow.prize_second}}
+                </td>
+                <td>
+                  <img src="./../../../assets/imgs/event/{{gameshow.image_second}}" alt="java" style="height=100px; width:200px">
+                </td>
+              </tr>
+              <tr *ngFor="let gameshow of gameshows">
+                <td>
+                  {{gameshow.title_third}}
+                </td>
+                <td>
+                  {{gameshow.prize_third}}
+                </td>
+                <td>
+                  <img src="./../../../assets/imgs/event/{{gameshow.image_third}}" alt="java" style="height=100px; width:200px">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+  </div>
+</section>

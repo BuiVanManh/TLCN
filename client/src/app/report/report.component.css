@@ -1,0 +1,22 @@
+  .container-report{
+    height: 100%;
+    width: 100%;
+    background: #ffffff;
+    background-size: cover;
+    align: middle ;
+    padding: 50px;
+  }
+  .pnx-msg-icon {
+    width: 50px !important;
+    height: 50px !important;
+}
+.header{
+  color: #0000ff;
+  font-size: xx-large;
+  font-style: oblique;
+
+}
+
+.input-group {
+    margin: 10px;
+}

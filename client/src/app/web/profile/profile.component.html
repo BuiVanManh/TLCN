@@ -1,0 +1,102 @@
+<div class="container main-content">
+
+  <div class="row">
+    <!-- <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad"> -->
+    <div class="panel panel-default">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h2 class="panel-heading panel-title">User Profile</h2>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <!-- <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="./../../../assets/web/img/imguser/{{urlHinh}}" class="img-circle img-responsive"> </div> -->
+            <div> <img alt="User Pic" src="./assets/imgs/tuan.jpg" class="img-circle img-responsive center-block" style="width: 200px; height: 200px; margin-bottom: 15px;"> </div>
+            <!-- <input type="file" id="selectImg" style="padding-top:80px;"> -->
+            <table class="table table-user-information">
+              <tbody>
+                <tr>
+                  <td>User Name</td>
+                  <td>{{username}}</td>
+                </tr>
+                <tr>
+                  <td>Account Creation Date</td>
+                  <td>{{register_date | date: 'dd/MM/yyyy'}}</td>
+                </tr>
+                <tr>
+                  <td>Birthday</td>
+                  <td>{{dateOfBirth}}</td>
+                </tr>
+
+                <!-- <tr> -->
+                <tr>
+                  <td>Sex</td>
+                  <td>{{sex}}</td>
+                </tr>
+                <tr>
+                  <td>Address</td>
+                  <td>{{address}}</td>
+                </tr>
+                <tr>
+                  <td>Email</td>
+                  <td><a href="#">{{email}}</a></td>
+                </tr>
+                <tr>
+                  <td>Phone Number</td>
+                  <td>{{phone}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" *ngIf="!isLoading">
+    <h2 class="card-header" style="text-align: center">Edit profile</h2>
+      <div class="card-block">
+        <form #accountForm="ngForm" (ngSubmit)="save(user)">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+            <input class="form-control" type="text" name="username" [(ngModel)]="user.username" placeholder="User Name" required>
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+            <input class="form-control" type="text" name="register_date" [(ngModel)]="user.register_date" placeholder="Account Creation Date" required>
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-birthday-cake"></i></span>
+            <input class="form-control" type="date" name="birthday" [(ngModel)]="user.dateOfBirth"
+              ng2-datetime-picker
+              date-only="true"
+              step="any"
+              required  
+            />
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-male"></i></span>
+            <input class="form-control" type="text" name="sex" [(ngModel)]="user.sex" placeholder="Sex" required>
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+            <input class="form-control" type="text" name="address" [(ngModel)]="user.address" placeholder="Address" required>
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+            <input class="form-control" type="email" name="email" [(ngModel)]="user.email" placeholder="Email" required>
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-phone-square"></i></span>
+            <input class="form-control" type="number" name="phone" [(ngModel)]="user.phone" placeholder="Phone Number" required>
+          </div>
+          <div class="input-group">
+            <button class="btn btn-primary" type="submit" [disabled]="!accountForm.form.valid">
+              <i class="fa fa-save"></i> Save
+            </button>
+          </div>
+        </form>
+    </div>
+  </div>
+
+</div>

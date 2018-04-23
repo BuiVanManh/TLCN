@@ -1,0 +1,53 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="page-header">
+        Detail Event Page <!-- <small>Best form elements.</small> -->
+      </h1>
+    </div>
+		<div class="col-lg-12" *ngIf="event.event">
+				<!-- image here -->
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<div class="jumbotron" style="text-align: center; margin: 15px 0px">
+							<p style="font-size: 30px;"><b>{{event.event.title}}</b></p>
+							<img src="./../../../../assets/imgs/event/{{event.event.image}}" alt="intro" class="img-responsive">
+						</div>
+					</div>
+
+					<!-- content here -->
+					<div class="panel-body">
+						<div class="col-sm-12 col-md-12">
+							<h3 class="title">Agenda</h3>
+						</div>
+						<div class="col-sm-12 col-md-12">
+							<p>Description:</p>
+    						<div [innerHTML]="event.event.description | noSanitize"></div>
+						</div>
+						<div class="col-sm-12 col-md-12">
+							<p> Location: {{ event.event.location }}</p>
+						</div>
+						<div class="col-sm-12 col-md-12">
+							<p> Start Day: {{ event.event.start_date }}</p>
+						</div>
+						<div class="col-sm-12 col-md-12">
+							<p> End Day: {{ event.event.end_date }}</p>
+						</div>
+						<div class="col-sm-12 col-md-12">
+							<div class="col-sm-9">
+								<a [routerLink]="['/event/checkin/', event.event._id]" href="#" class="btn btn-primary">Check In</a>
+								<a [routerLink]="['/event/checkinmobile/', event.event._id]" href="#" class="btn btn-warning">Check In By Mobile</a>
+								<a [routerLink]="['/game/lotto/', event.event._id]" href="#" class="btn btn-success">Play Game</a>
+								<a [routerLink]="['/report/', event.event._id]" href="#" class="btn btn-info">Report</a>
+							</div>
+							<div class="col-sm-3">
+								<a [routerLink]="['/event/edit/', event.event._id]" href="#" class="btn btn-warning">Update</a>
+								<a routerLink="" href="#" class="btn btn-danger">Delete</a>
+							</div>
+						</div>
+					</div> <!-- end of panel-body -->
+			</div> <!-- end of panel panel-default -->
+		</div>
+	</div>
+</div>

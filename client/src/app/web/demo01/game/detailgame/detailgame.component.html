@@ -1,0 +1,77 @@
+<div class="container-detail">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="page-header">
+        Update Game Page <!-- <small>Best form elements.</small> -->
+      </h1>
+    </div>
+  </div>
+  <div class="row">
+    <!-- start of col-lg-12 part 01-->
+    <section class="content">
+      <div class="row">
+        <div class="col-md-6">
+            <div class="row"> 
+                <h3>Thể lệ Game</h3>
+                <p>Hàng loạt quà tặng hiện vật công nghệ cao cùng hàng ngìn vật phẩm in-game giá trị trong chương trình Quay Số 360Play - Nhận Ngay Quà Khủng. Chơi hoàn toàn miễn phí, tỷ lệ trúng thưởng là 100%, cơ hội ngay trong tầm tay. Hãy tham gia ngay với Quay Số 360Play.</p>
+                <ul>
+                  <li><strong> Thời gian:</strong> Áp dụng từ 15:00 ngày 24.8 đến hết 6.9.2015</li>
+                  <li><strong>Nội dung:</strong> Tham gia quay số và nhận thưởng</li>
+                  <li><strong>Đối tượng:</strong>Tài khoản đạt cấp độ VIP 4 trở lên và tham gia game 9K, Bách Chiến Vô Song, Cửu Tinh Vô Song, Gunny, MU Huyền Thoại, Thần Khúc, Bách Chiến 2, Củ Hành.</li>
+                  <li><a href="#">Tham gia ngay và xem thể lệ chương trình tại đây.</a></li>
+                </ul>
+            </div>
+            <div class="row"> 
+                <img src="">
+                <h3>Phần thưởng</h3>
+                <p>Hàng ngàn phần thưởng hấp dẫn đang chờ đón quý vị sở hữu, hãy nhanh chóng tham gia hoạt động cực hot này để trải nghiệm những khoảnh khắc thú vị từ sự kiện mang lại. Mọi thắc mắc liên quan đến chương trình, vui lòng gửi thông tin về trang hotro.zing.vn hoặc liên hệ theo đường dây nóng 1900 561 558 (cước phí 2.000đ/phút) để nhận được sự hỗ trợ tốt nhất.</p>
+                <p>Thân chúc Quý Khách Hàng may mắn!</p>
+  
+            </div>
+        </div>
+        <div class="col-md-6">
+          <div style="text-align: center;"><h3><strong> Danh sách những người trúng giải thưởng</strong></h3></div>
+            <table class="table table-hover">
+                <p></p>
+                <thead>
+                  <tr>
+                    <th>Họ tên</th>
+                    <th>SĐT</th>
+                    <th>Email</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngIf="winner1">
+                    <td>{{winner1.fullname}}</td>
+                    <td>{{winner1.phonenumber}}</td>
+                    <td>{{winner1.email}}</td>
+                  </tr>
+                  <tr *ngIf="winner2">
+                    <td>{{winner2.fullname}}</td>
+                    <td>{{winner2.phonenumber}}</td>
+                    <td>{{winner2.email}}</td>
+                  </tr>
+                  <tr *ngIf="winner3">
+                    <td>{{winner3.fullname}}</td>
+                    <td>{{winner3.phonenumber}}</td>
+                    <td>{{winner3.email}}</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="btn-group" style="">
+  
+                <ul class="pagination pagination-large" id="">
+                  <li class="disabled"><span>«</span></li>
+                  <li class="active"><span>1</span></li>
+                  <li><a href="http://bootsnipp.com/tags/lists?page=2">2</a></li>
+                  <li><a href="http://bootsnipp.com/tags/lists?page=3">3</a></li>
+                  <li><a href="http://bootsnipp.com/tags/lists?page=2" rel="next">»</a></li> 
+                </ul>
+                
+              </div>
+              <button type="button" class="btn btn-primary btn-block">Xuất danh sách</button>
+        </div>
+      </div>
+    </section>  
+  </div>
+</div>

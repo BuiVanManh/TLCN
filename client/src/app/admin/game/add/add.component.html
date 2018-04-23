@@ -1,0 +1,104 @@
+<div class="row">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">
+        Create A Game<!-- <small>Best form elements.</small> -->
+      </h1>
+    </div>
+  </div>
+    <!-- <div class="card" *ngIf="!isLoading && !isDetail">
+        <h4 class="card-header">Listgame</h4>
+        <div class="card-block">
+          <table class="table table-bordered table-striped">
+            <thead class="thead-default">
+              <tr>
+                <th>Name</th>
+                <th>Amount of Prizes</th>
+                <th>Actions</th>
+              </tr>
+            </thead> -->
+            <!-- <tbody *ngIf="game.length === 0">
+              <tr>
+                <td colspan="4">There are no game in the DB. Add a new game below.</td>
+              </tr>  
+            </tbody>
+            <tbody *ngIf="!isEditing">
+              <tr *ngFor="let game of games">
+                <td>{{game.name}}</td>
+                <td>{{game.prizeamount}}</td>
+                <td *ngIf="auth.loggedIn">
+                  <button class="btn btn-sm btn-warning" (click)="enableEditing(game)"><i class="fa fa-pencil"></i> Edit</button> 
+                  <button class="btn btn-sm btn-danger" (click)="deleteGame(game)"><i class="fa fa-trash"></i> Delete</button>
+                  <button class="btn btn-sm btn-success" routerLink="/gameshow" href="#" ><i class="fa fa-info-circle"></i> View</button>
+                </td>
+              </tr>  
+            </tbody> -->
+            <!-- <tbody *ngIf="isEditing">
+              <tr>
+                <td colspan="4">
+                  <form style="display:inline">
+                    <div>
+                      <input type="text" name="name" placeholder="Name" required>
+                    </div>
+                    <div>
+                      <input type="number" name="prizeamount" placeholder="Amount of prizes" step="any" min="0" step="1" required>
+                    </div>
+                    <button class="btn btn-sm btn-primary" type="submit" ><i class="fa fa-floppy-o"></i> Save</button>
+                  </form>
+                  <button class="btn btn-sm btn-warning"><i class="fa fa-times"></i> Cancel</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div> -->
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="panel panel-primary">
+        <div class="panel-body">
+          <div class="row show-hide-message">
+            <div [ngClass]="messageClass">
+              {{message}}
+            </div>
+          </div>
+          <form [formGroup]="form" (submit)="addGame()" role="form">
+            <div class="col-lg-12">
+              <div class="form-group">
+                <label class="col-md-2 control-label">Name of Game</label>
+                <input type="text" name="title" id="title" class="form-control" placeholder="Typing name of game ..." formControlName="title" required >
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Number of Prizes</label>
+                <input type="number" name="prizeamount" id="prizeamount" class="form-control" placeholder="Typing number of prizes ..." formControlName="prizeamount" min="0" max="3" step="1" required >
+              </div>
+
+              <div class="form-group">
+                  <button type="submit" class="btn btn-success" > <i class="fa fa-floppy-o"></i> Create</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="card-block">
+    <form accept-charset="UTF-8" class="require-validation" id="payment-form">
+      <div class="col-lg-12">
+        <div class="form-group">
+          <label class="control-label">Tên trò chơi</label>
+          <input type="text" name="title" id="title" class="form-control" placeholder="Nhập tên trò chơi ..." [(ngModel)]="newGame.title" required >
+        </div>
+
+        <div class="form-group">
+          <label class="control-label">Số lượng giải thưởng</label>
+          <input type="number" name="prizeamount" id="prizeamount" class="form-control" placeholder="Nhập số lượng giải thưởng" [(ngModel)]="newGame.prizeamount" min="0" max="3" step="1" required >
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-success" (click)="addGame()"> <i class="fa fa-floppy-o"></i> Create</button>
+        </div>
+      </div>
+    </form>
+  </div> -->
+</div>

@@ -1,0 +1,48 @@
+<!-- <div class="logo">
+    <a href="#" class="simple-text">
+        <div class="logo-img">
+            <img src="./assets/imgs/avatar01.png"/>
+        </div>
+        EAGLE ROCK
+    </a>
+</div> -->
+
+<ul class="nav" id="side-menu">
+    <li>
+        <a routerLink="/admin" href="#"><i class="fa fa-calendar-plus-o"></i> Event Management<span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level">
+            <li>
+                <a routerLink="/admin/listevents">List of Events</a>
+            </li>
+            <li>
+                <a routerLink="/admin/addevents">Add New Event</a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a routerLink="/admin/listuser"><i class="fa fa-users fa-fw"></i> Employee Management</a>
+    </li>
+
+    <li>
+        <a routerLink="/admin" href="#"><i class="fa fa-gamepad"></i> Game Management<span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level">
+            <li>
+                <a routerLink="/admin/game/add">Add New Game</a>
+            </li>
+            <li>
+                <a routerLink="/admin/game/list">List of Games</a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a routerLink="/admin" href="#"><i class="fa fa-database" aria-hidden="true"></i> Client Management <span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level">
+            <li>
+                <a routerLink="/admin/client/list">List of Clients</a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a routerLink="/admin/report/list"><i class="fa fa-flag"></i> Report</a>
+    </li>
+</ul>

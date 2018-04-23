@@ -1,0 +1,65 @@
+
+
+<div class="container-checkin">
+    <div> <img class="first-slide" src="./assets/imgs/event/{{event.event.image}}" alt="First slide">
+    </div>
+        <div class="w3-card w3-center" style="margin: 0px 250px">
+            <h4 class="header" style="text-align: center">Checkin</h4>
+            <div class="card-block">
+                <form [formGroup]="addClientForm" (ngSubmit)="onClientSubmit()">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user-circle"></i></span>
+                        <input type="text" name="fullname" class="form-control" formControlName="fullname" placeholder="Full Name" autofocus>
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                        <input type="email" name="email" class="form-control" formControlName="email" placeholder="Email" autofocus>
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                        <input type="text" name="phonenumber" class="form-control" autocomplete="off" placeholder="Typying your phone number ..." formControlName="phonenumber"
+                        />
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-building-o"></i></span>
+                        <select class="form-control" type="text" name="job" formControlName="job" placeholder="Job" autofocus>
+                        <option value="" selected disabled>Job</option>
+                        <option value="IT">IT</option>
+                        <option value="Doctor">Doctor</option>
+                        <option value="Nurse">Nurse</option>
+                        <option value="Bussinessman">Bussiness Man</option>
+                        <option value="Student">Student</option>
+                        <option value="Bank">Banker</option>
+                        <option value="Disigner">Disigner</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-building-o"></i></span>
+                        <select class="form-control" type="text" name="skill" formControlName="skill" placeholder="Skill" autofocus>
+                        <option value="" selected disabled>Skill</option>
+                        <option value="Analytics">Analytics</option>
+                        <option value="Coding">Coding</option>
+                        <option value="Database">Database</option>
+                        <option value="Manage">Manage</option>
+                        <option value="Cure">Cure</option>
+                        <option value="Design">Design</option>
+                        <option value="Counting Money">Counting Money</option>
+                        <option value="Search">Search</option>
+                        <option value="Business">Business</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <button type="submit" class="btn btn-success btn-lg btn-block" [disabled]="!addClientForm.valid"> Check In </button>
+                    </div>
+                </form> 
+            </div>
+        </div>
+    
+    
+    </div>
+    
+    
+    
+    
